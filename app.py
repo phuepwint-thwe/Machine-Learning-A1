@@ -2,6 +2,16 @@ import streamlit as st
 import pickle
 import numpy as np
 
+# Load the model and scaler from disk
+model_path = 'F:/MLLessonAI/AIT/car_price_prediction.model'
+scaler_path = 'F:/MLLessonAI/AIT/scaler.pkl'
+
+with open(model_path, 'rb') as model_file:
+    loaded_model = pickle.load(model_file)
+
+with open(scaler_path, 'rb') as scaler_file:
+    loaded_scaler = pickle.load(scaler_file)
+
 #input
 st.title("Car Price Prediction")
 
