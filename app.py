@@ -26,17 +26,14 @@ if st.button('Predict Selling Price'):
     # Prepare the feature array for prediction
     features = np.array([[engine, mileage, max_power]])
     
-    # Scale the features
-    features_scaled = loaded_scaler.transform(features)
-    
     # Predict the selling price
-    predicted_price_log = loaded_model.predict(features_scaled)
+    predicted_price_log = loaded_model.predict(features)
     
     # Reverse the log transformation to get the actual price
     predicted_price = np.exp(predicted_price_log)
     
     # Display the result
-    st.write(f"Predicted Selling Price: ₹{predicted_price[0]:,.2f}")
+    st.write(f"Predicted Selling Price: {predicted_price[0]:,.2f}")
     pass
 
 st.write("This is a prototype app for predicting car selling prices using a pre-trained model.")
