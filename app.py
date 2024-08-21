@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the model and scaler from disk
-model_path = 'F:/MLLessonAI/AIT/car_price_prediction.model'
+model_path = 'F:/MLLessonAI/AIT/car_selling_price.model'
 
 with open(model_path, 'rb') as model_file:
     loaded_model = pickle.load(model_file)
